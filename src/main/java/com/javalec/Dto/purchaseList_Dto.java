@@ -4,31 +4,26 @@ public class purchaseList_Dto {
 	
 	//Field
 	String pName;
+	String pColor;
 	String mId;
-	int pId;
+	int cSize;
 	int pQty;
 	String pDate;
-	
-	
 	
 	//Constructor
 	public purchaseList_Dto() {
 		
 	}
 
-	
-	
-
-	public purchaseList_Dto(String pName, String mId, int pId, int pQty, String pDate) {
+	public purchaseList_Dto(String pName, String pColor, String mId, int cSize, int pQty, String pDate) {
 		super();
 		this.pName = pName;
+		this.pColor = pColor;
 		this.mId = mId;
-		this.pId = pId;
+		this.cSize = cSize;
 		this.pQty = pQty;
 		this.pDate = pDate;
 	}
-
-
 
 	// Method
 	public String getmId() {
@@ -39,12 +34,12 @@ public class purchaseList_Dto {
 		this.mId = mId;
 	}
 
-	public int getpId() {
-		return pId;
+	public int getcSize() {
+		return cSize;
 	}
 
-	public void setpId(int pId) {
-		this.pId = pId;
+	public void setcSize(int cSize) {
+		this.cSize = cSize;
 	}
 
 	public String getpName() {
@@ -69,6 +64,14 @@ public class purchaseList_Dto {
 
 	public void setpDate(String pDate) {
 		this.pDate = pDate;
+	}
+
+	public String getpColor() {
+		return pColor;
+	}
+
+	public void setpColor(String pColor) {
+		this.pColor = pColor;
 	}
 	
 		

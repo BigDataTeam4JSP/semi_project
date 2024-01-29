@@ -17,7 +17,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				<img src="${dto.pimgpath }" class="img-fluid" alt="이미지">
+				<img src="img/${dto.pimgpath }" class="img-fluid" alt="이미지">
 			</div>
 			<div class="col-md-6">
 				<h3>${dto.pname }</h3>

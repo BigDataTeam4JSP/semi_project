@@ -18,18 +18,22 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>상품명</th>
+        <th class="text-center">구매자</th>
+        <th class="text-center">물품</th>
+        <th class="text-center">색깔</th>
+        <th class="text-center">사이즈</th>
         <th class="text-center">수량</th>
-        <th class="text-center">품번</th>
         <th class="text-center">날짜</th>
       </tr>
     </thead>
     <tbody>
       <c:forEach items="${pList}" var="purchase">
         <tr>
+          <td class="text-center">${purchase.mId}</td>
           <td class="text-center">${purchase.pName}</td>
+          <td class="text-center">${purchase.pColor}</td>
+          <td class="text-center">${purchase.cSize}</td>
           <td class="text-center">${purchase.pQty}</td>
-          <td class="text-center">${purchase.pId}</td>
           <td class="text-center">${purchase.pDate}</td>
         </tr>
       </c:forEach>

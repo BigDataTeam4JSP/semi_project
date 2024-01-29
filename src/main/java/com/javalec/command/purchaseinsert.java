@@ -16,7 +16,7 @@ public class purchaseinsert implements Command {
 		
 		detail_Dto dto = (detail_Dto)session.getAttribute("detailSession");
 		
-		String mid = (String) session.getAttribute("loginid");
+		String mid = (String) session.getAttribute("loginID");
 		int pid = dto.getPid();
 		String qty = (String)session.getAttribute("qty");
 		System.out.println(qty);

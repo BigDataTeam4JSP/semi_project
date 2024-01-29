@@ -7,6 +7,7 @@ public class productList_Dto {
 	String pName;
 	int pPrice;
 	String pColor;
+	String pImgPath;
 	
 	//Constructor
 	public productList_Dto() {
@@ -23,10 +24,11 @@ public class productList_Dto {
 	}
 	
 
-	public productList_Dto(int pId, String pName) {
+	public productList_Dto(int pId, String pName, String pImgPath) {
 		super();
 		this.pId = pId;
 		this.pName = pName;
+		this.pImgPath = pImgPath;
 	}
 
 	//Method
@@ -69,6 +71,16 @@ public class productList_Dto {
 
 	public void setpColor(String pColor) {
 		this.pColor = pColor;
+	}
+
+
+	public String getpImgPath() {
+		return pImgPath;
+	}
+
+
+	public void setpImgPath(String pImgPath) {
+		this.pImgPath = pImgPath;
 	}
 	
 	
