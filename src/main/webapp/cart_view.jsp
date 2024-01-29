@@ -36,7 +36,7 @@
 		</div>
 		<div class="row">
 			<div class="col-12 mt-2">
-				<a href="purchaseList.do" class="btn btn-primary float-right">구매확정</a>
+				<a href="purchaseinsert.do" class="btn btn-primary float-right">구매확정</a>
 			</div>
 		</div>
 	</div>
