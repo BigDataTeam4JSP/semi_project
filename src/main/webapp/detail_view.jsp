@@ -13,6 +13,7 @@
 </head>
 <body>
 <c:import url="head.jsp" />
+<br>
 	<form action="cart.do" method="post">
 		<div class="container">
 			<div class="row">
