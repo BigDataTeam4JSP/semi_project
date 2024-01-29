@@ -6,14 +6,14 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>구매목록</title>
+  <title>내구매내역</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
  <c:import url="head.jsp" />
 <div class="container">
   
-  <h1 class="mt-2">구매목록</h1>
+  <h1 class="mt-2">내구매내역</h1>
 
   <table class="table table-bordered">
     <thead>
