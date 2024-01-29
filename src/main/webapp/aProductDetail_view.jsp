@@ -23,16 +23,15 @@
             <tr>
                 <th>사이즈</th>
                 <th>재고</th>
+                <th> </th>
             </tr>
             <c:forEach items="${spec}" var="spec">
                 <tr>
-                    <td>${spec.pSize}</td>
-                    <td><input type="text" name="Qty" value="${spec.pQty}"></td>
+                    <td><input type="hidden" name="size" value="${spec.pSize}">${spec.pSize}</td>
+                    <td><input type="hidden" name="id" value="${spec.pId}"><input type="text" name="qty" value="${spec.pQty}"></td>
+                    <td><input type="submit" value="수정하기"></td>
                 </tr>
             </c:forEach>
-            <tr>
-            	<td colspan="2"><input type="submit" value="수정하기"></td>
-            </tr>
         </table>
         </form>
     </div>
