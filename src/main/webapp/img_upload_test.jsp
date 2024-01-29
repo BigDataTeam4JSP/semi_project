@@ -12,7 +12,7 @@
 		<input type="file" name="file">
 		<input type="submit" value="전송">	
 		
-		1
+		12
 	</form>	
 </body>
 </html>
