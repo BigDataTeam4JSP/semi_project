@@ -8,6 +8,8 @@ public class aProduct_Dto {
 	String pPrice;
 	int pSize;
 	int pQty;
+	String pContent;
+	String pfilepath;
 	
 	
 	public aProduct_Dto() {
@@ -21,13 +23,20 @@ public class aProduct_Dto {
 		this.pPrice = pPrice;
 	}
 	
-	public aProduct_Dto(int pId, String pName, String pColor, String pPrice, int pSize, int pQty) {
+	public aProduct_Dto(int pId, String pName, String pColor, String pPrice,String pContent, int pSize, int pQty) {
 		this.pId = pId;
 		this.pName = pName;
 		this.pColor = pColor;
 		this.pPrice = pPrice;
+		this.pContent = pContent;
 		this.pSize = pSize;
 		this.pQty = pQty;
+	}
+	
+	
+
+	public aProduct_Dto(String pfilepath) {
+		this.pfilepath = pfilepath;
 	}
 
 	public int getpId() {
@@ -77,6 +86,25 @@ public class aProduct_Dto {
 	public void setpQty(int pQty) {
 		this.pQty = pQty;
 	}
+
+	public String getpContent() {
+		return pContent;
+	}
+
+	public void setpContent(String pContent) {
+		this.pContent = pContent;
+	}
+
+	public String getPfilepath() {
+		return pfilepath;
+	}
+
+	public void setPfilepath(String pfilepath) {
+		this.pfilepath = pfilepath;
+	}
+	
+	
+	
 	
 	
 
