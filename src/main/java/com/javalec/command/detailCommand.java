@@ -14,7 +14,9 @@ public class detailCommand implements Command {
 		
 		HttpSession session = request.getSession();
 		
-		int pid = Integer.parseInt((String)request.getAttribute("pId"));
+//		System.out.println(request.getParameter("pId"));
+		
+		int pid = Integer.parseInt(request.getParameter("pId"));
 		detail_Dao dao = new detail_Dao();
 		detail_Dto dto = dao.detail(pid);
 		request.setAttribute("detail", dto);
