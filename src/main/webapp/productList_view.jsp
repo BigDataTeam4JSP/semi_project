@@ -16,7 +16,7 @@
 		  <th>상품ID</th>
 		  <th>상품명</th>	
 		  <th>사진</th>
-		
+
 	   	</tr>
 	   		<c:forEach items="${list}" var="product">
 		<tr>
