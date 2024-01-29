@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import com.javalec.command.Command;
 import com.javalec.command.aProcuctQtyUpdate;
 import com.javalec.command.aProductDetailCommand;
+import com.javalec.command.aProductImgUpdateCommand;
 import com.javalec.command.aProductInsertCommand;
 import com.javalec.command.aProductListCommand;
 import com.javalec.command.cartCommand;
@@ -86,26 +87,26 @@ public class FrontController extends HttpServlet {
 		case ("/login.do"):
 			command = new loginCommand();
 			command.execute(request, response);
-			String loginID = (String)session.getAttribute("loginID");
-			System.out.println("loginID : "+loginID);
+			String loginID = (String) session.getAttribute("loginID");
+			System.out.println("loginID : " + loginID);
 
-			if(loginID != null) {
-				if(loginID.equals("admin")) {
+			if (loginID != null) {
+				if (loginID.equals("admin")) {
 					viewPage = "aProductList.do";
-				}else {
+				} else {
 					viewPage = "productList.do";
-					//viewPage = "userInfo.do";
+					// viewPage = "userInfo.do";
 				}
-			}else {
+			} else {
 				viewPage = "login_view.jsp";
 			}
 			break;
-		case("/userInfo.do"):
+		case ("/userInfo.do"):
 			command = new userInfoCommand();
 			command.execute(request, response);
 			viewPage = "userInfo.jsp";
 			break;
-		case("/logout.do"):
+		case ("/logout.do"):
 			session.invalidate();
 			viewPage = "login_view.jsp";
 			break;
@@ -137,7 +138,7 @@ public class FrontController extends HttpServlet {
 			command.execute(request, response);
 			response.sendRedirect("loginStart.do");
 			break;
-		case("/checkid.do"):
+		case ("/checkid.do"):
 			command = new idCheckCommand();
 			command.execute(request, response);
 			viewPage = "sign_view.jsp";
@@ -163,6 +164,11 @@ public class FrontController extends HttpServlet {
 			break;
 		case ("/aProcuctUpdate.do"):
 			command = new aProcuctQtyUpdate();
+			command.execute(request, response);
+			viewPage = "aProductList.do";
+			break;
+		case ("/imageUpdate.do"):
+			command = new aProductImgUpdateCommand();
 			command.execute(request, response);
 			viewPage = "aProductList.do";
 			break;

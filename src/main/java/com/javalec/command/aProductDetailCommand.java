@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import com.javalec.Dao.aProduct_Dao;
 import com.javalec.Dto.aProduct_Dto;
 
+
 public class aProductDetailCommand implements Command {
 
 	@Override
@@ -23,11 +24,14 @@ public class aProductDetailCommand implements Command {
 		
 		HttpSession session = request.getSession();
 		
+		session.setAttribute("ID",dtos.get(0).getpId());
 		session.setAttribute("NAME",dtos.get(0).getpName());
 		session.setAttribute("COLOR",dtos.get(0).getpColor());
 		session.setAttribute("PRICE",dtos.get(0).getpPrice());
+		session.setAttribute("CONTENT",dtos.get(0).getpContent());
+		
 	}
-
+	
 	@Override
 	public boolean execute2(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub

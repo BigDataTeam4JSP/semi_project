@@ -11,10 +11,17 @@
 <body class="text-center">
     <div class="container">
         <p class="display-1">상품 디테일</p>
-        <img src="${pageContext.request.contextPath}/img/superstar_white.jpeg" class="img-fluid" alt="상품 이미지" style="width: 500px; height: 500px;"><br><br>
+        
+        <img src="${pageContext.request.contextPath}/img/superstar_white.jpeg" class="img-fluid" alt="상품 이미지" style="width: 500px; height: 500px;"><br>
+        
+        <form action="imageUpdate.do" method="get" enctype="multipart/form-data">
+       	 	<input type="file" name="file"><input type="submit" value="사진 등록">
+        </form>
+        
         <p>상품명 : ${sessionScope.NAME}</p><br>
         <p>색상 : ${sessionScope.COLOR}</p><br>
-        <p>가격 : ${sessionScope.PRICE}</p><br><br>
+        <p>가격 : ${sessionScope.PRICE}</p><br>
+        <p>정보 : ${sessionScope.CONTENT}</p><br><br>
 
         <%session.invalidate(); %>
         
@@ -27,8 +34,8 @@
             </tr>
             <c:forEach items="${spec}" var="spec">
                 <tr>
-                    <td><input type="hidden" name="size" value="${spec.pSize}">${spec.pSize}</td>
-                    <td><input type="hidden" name="id" value="${spec.pId}"><input type="text" name="qty" value="${spec.pQty}"></td>
+                    <td><input type="hidden" name="psize" value="${spec.pSize}">${spec.pSize}</td>
+                    <td><input type="hidden" name="pid" value="${spec.pId}"><input type="text" name="pqty" value="${spec.pQty}"></td>
                     <td><input type="submit" value="수정하기"></td>
                 </tr>
             </c:forEach>
