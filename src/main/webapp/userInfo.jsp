@@ -1,12 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>»ç¿ëÀÚÁ¤º¸ ¼öÁ¤</title>
+<meta charset="UTF-8">
+<title>ì‚¬ìš©ìž ì •ë³´ ìˆ˜ì •</title>
 </head>
 <body>
-
+<c:import url="head.jsp" />
+<!-- 
+<c:import url="head.jsp" >
+	<c:param name="" value=""></c:param>
+</c:import>
+ -->
 </body>
 </html>
