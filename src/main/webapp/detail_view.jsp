@@ -12,6 +12,7 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+<c:import url="head.jsp" />
 	<form action="cart.do" method="post">
 		<div class="container">
 			<div class="row">
