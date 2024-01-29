@@ -13,8 +13,8 @@ public class detailCommand implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		HttpSession session = request.getSession();
-
-		int pid = Integer.parseInt("1");
+		
+		int pid = Integer.parseInt((String)request.getAttribute("pId"));
 		detail_Dao dao = new detail_Dao();
 		detail_Dto dto = dao.detail(pid);
 		request.setAttribute("detail", dto);
