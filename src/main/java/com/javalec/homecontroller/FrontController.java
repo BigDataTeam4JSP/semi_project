@@ -118,10 +118,12 @@ public class FrontController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "aProductDetail_view.jsp";
 			break;
+		case("/aProductInsert_view.do"):
+			viewPage = "aProductInsert_view";
 		case("/aProductInsert.do"):
 			command = new aProductInsertCommand();
 			command.execute(request, response);
-			viewPage = "aProductInsert_view.jsp";
+			viewPage = "aProductList.do";
 			break;
 		default:
 			break;
