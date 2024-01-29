@@ -23,8 +23,7 @@ public class aProductDetailCommand implements Command {
 		request.setAttribute("spec", dtos);
 		
 		HttpSession session = request.getSession();
-		
-		session.setAttribute("ID",dtos.get(0).getpId());
+		session.setAttribute("ID",pid);
 		session.setAttribute("NAME",dtos.get(0).getpName());
 		session.setAttribute("COLOR",dtos.get(0).getpColor());
 		session.setAttribute("PRICE",dtos.get(0).getpPrice());

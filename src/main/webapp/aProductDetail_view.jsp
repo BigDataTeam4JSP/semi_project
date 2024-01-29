@@ -14,10 +14,6 @@
         
         <img src="${pageContext.request.contextPath}/img/superstar_white.jpeg" class="img-fluid" alt="상품 이미지" style="width: 500px; height: 500px;"><br>
         
-        <form action="imageUpdate.do" method="get" enctype="multipart/form-data">
-       	 	<input type="file" name="file"><input type="submit" value="사진 등록">
-        </form>
-        
         <p>상품명 : ${sessionScope.NAME}</p><br>
         <p>색상 : ${sessionScope.COLOR}</p><br>
         <p>가격 : ${sessionScope.PRICE}</p><br>
@@ -29,8 +25,8 @@
         <table class="table table-striped table-s">
             <tr>
                 <th>사이즈</th>
-                <th>재고</th>
-                <th> </th>
+                <th>현재 재고</th>
+                <th>재고 수정</th>
             </tr>
             <c:forEach items="${spec}" var="spec">
                 <tr>
