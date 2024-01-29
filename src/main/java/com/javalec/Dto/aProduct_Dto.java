@@ -33,9 +33,8 @@ public class aProduct_Dto {
 		this.pQty = pQty;
 	}
 	
-	
-
-	public aProduct_Dto(String pfilepath) {
+	public aProduct_Dto(int pId, String pfilepath) {
+		this.pId = pId;
 		this.pfilepath = pfilepath;
 	}
 

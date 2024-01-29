@@ -21,6 +21,9 @@ public class aProductDetailCommand implements Command {
 		aProduct_Dao dao = new aProduct_Dao();
 		ArrayList<aProduct_Dto> dtos = dao.spec(pid);
 		request.setAttribute("spec", dtos);
+		aProduct_Dto dto = new aProduct_Dto();
+		dto = dao.imgpath(pid);
+		
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("ID",pid);
@@ -28,6 +31,9 @@ public class aProductDetailCommand implements Command {
 		session.setAttribute("COLOR",dtos.get(0).getpColor());
 		session.setAttribute("PRICE",dtos.get(0).getpPrice());
 		session.setAttribute("CONTENT",dtos.get(0).getpContent());
+		session.setAttribute("FILEPATH",dto.getPfilepath());
+		
+		System.out.println(session.getAttribute("FILEPATH"));
 		
 	}
 	
