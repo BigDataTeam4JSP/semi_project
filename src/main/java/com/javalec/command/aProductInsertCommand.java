@@ -17,23 +17,24 @@ public class aProductInsertCommand implements Command {
 		String pname = request.getParameter("name");
 		String pcolor = request.getParameter("color");
 		String pprice = request.getParameter("price");
+		String pcontent = request.getParameter("content");
 		
 		aProduct_Dao dao = new aProduct_Dao();
-		dao.insertProduct(pname, pcolor, pprice);
+		dao.insertProduct(pname, pcolor, pprice,pcontent);
 		dao.insertSpec(pname, pcolor, pprice);
 		
-//		String uploadPath = request.getSession().getServletContext().getRealPath("/img");
-//		
-//		System.out.println(uploadPath);
-//		
-//		int sizeLimit = 100*1024*1024;		//100MB 제한
-//		
-//		try {
-//			MultipartRequest multi = new MultipartRequest(request, uploadPath, sizeLimit, "UTF-8", new DefaultFileRenamePolicy());
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		String uploadPath = request.getSession().getServletContext().getRealPath("/img");
+		
+		System.out.println(uploadPath);
+		
+		int sizeLimit = 100*1024*1024;		//100MB 제한
+		
+		try {
+			MultipartRequest multi = new MultipartRequest(request, uploadPath, sizeLimit, "UTF-8", new DefaultFileRenamePolicy());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 
 	}
