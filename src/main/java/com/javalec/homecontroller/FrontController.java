@@ -167,6 +167,9 @@ public class FrontController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "aProductList.do";
 			break;
+		case ("/imageUpdate_view.do"):
+			viewPage = "aProductupdateimg.jsp";
+			break;
 		case ("/imageUpdate.do"):
 			command = new aProductImgUpdateCommand();
 			command.execute(request, response);
