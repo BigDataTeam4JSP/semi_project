@@ -17,10 +17,12 @@ import com.javalec.command.aProductInsertCommand;
 import com.javalec.command.aProductListCommand;
 import com.javalec.command.cartCommand;
 import com.javalec.command.detailCommand;
+import com.javalec.command.idCheckCommand;
 import com.javalec.command.loginCommand;
 import com.javalec.command.productListCommand;
 import com.javalec.command.purchaseListCommnad;
 import com.javalec.command.signupCommand;
+import com.javalec.command.userInfoCommand;
 
 /**
  * Servlet implementation class FrontController
@@ -84,7 +86,28 @@ public class FrontController extends HttpServlet {
 		case ("/login.do"):
 			command = new loginCommand();
 			command.execute(request, response);
-			viewPage = "productList.do";
+			String loginID = (String)session.getAttribute("loginID");
+			System.out.println("loginID : "+loginID);
+
+			if(loginID != null) {
+				if(loginID.equals("admin")) {
+					viewPage = "aProductList.do";
+				}else {
+					viewPage = "productList.do";
+					//viewPage = "userInfo.do";
+				}
+			}else {
+				viewPage = "login_view.jsp";
+			}
+			break;
+		case("/userInfo.do"):
+			command = new userInfoCommand();
+			command.execute(request, response);
+			viewPage = "userInfo.jsp";
+			break;
+		case("/logout.do"):
+			session.invalidate();
+			viewPage = "login_view.jsp";
 			break;
 		case ("/productList.do"):
 			command = new productListCommand();
@@ -113,6 +136,12 @@ public class FrontController extends HttpServlet {
 			command = new signupCommand();
 			command.execute(request, response);
 			response.sendRedirect("loginStart.do");
+			break;
+		case("/checkid.do"):
+			command = new idCheckCommand();
+			command.execute(request, response);
+			viewPage = "sign_view.jsp";
+//			response.sendRedirect("signupStart.do");
 			break;
 		case ("/aProductList.do"):
 			command = new aProductListCommand();
