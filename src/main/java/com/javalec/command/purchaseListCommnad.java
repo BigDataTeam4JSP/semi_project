@@ -4,10 +4,9 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import com.javalec.Dao.productList_Dao;
 import com.javalec.Dao.purchaseList_Dao;
-import com.javalec.Dto.productList_Dto;
 import com.javalec.Dto.purchaseList_Dto;
 
 public class purchaseListCommnad implements Command {
@@ -15,8 +14,11 @@ public class purchaseListCommnad implements Command {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();
+		String mId = (String) session.getAttribute("loginID"); //login id 받기.
+
 		 purchaseList_Dao dao = new purchaseList_Dao();
-		 ArrayList<purchaseList_Dto> dtos = dao.spec("ccc");
+		 ArrayList<purchaseList_Dto> dtos = dao.spec(mId);
 		 		 					
 		 request.setAttribute("pList", dtos);
 
