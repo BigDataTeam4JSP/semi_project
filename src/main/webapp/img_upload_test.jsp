@@ -11,6 +11,8 @@
 	<form action="purchaseList.do" method="post" enctype="multipart/form-data">
 		<input type="file" name="file">
 		<input type="submit" value="전송">	
+		
+		1
 	</form>	
 </body>
 </html>
