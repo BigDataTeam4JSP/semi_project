@@ -12,9 +12,9 @@
     <div class="container">
         <p class="display-1">상품 디테일</p>
         <img src="${pageContext.request.contextPath}/img/superstar_white.jpeg" class="img-fluid" alt="상품 이미지" style="width: 500px; height: 500px;"><br><br>
-        <p>상품명 : <%=session.getAttribute("NAME") %></p><br>
-        <p>색상 : <%=session.getAttribute("COLOR") %></p><br>
-        <p>가격 : <%=session.getAttribute("PRICE") %></p><br><br>
+        <p>상품명 : ${sessionScope.NAME}</p><br>
+        <p>색상 : ${sessionScope.COLOR}</p><br>
+        <p>가격 : ${sessionScope.PRICE}</p><br><br>
 
         <%session.invalidate(); %>
         
