@@ -5,14 +5,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Product Detail Page</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body class="text-center">
+<c:import url="head.jsp" />
+<br>
     <div class="container">
         <p class="display-1">상품 디테일</p>
         
-        <img src="${pageContext.request.contextPath}/img/superstar_white.jpeg" class="img-fluid" alt="상품 이미지" style="width: 500px; height: 500px;"><br>
+        <img src="img/${sessionScope.FILEPATH}" alt="제품 이미지" width="300px" height="300px"><br><br>
         
         <p>상품명 : ${sessionScope.NAME}</p><br>
         <p>색상 : ${sessionScope.COLOR}</p><br>
