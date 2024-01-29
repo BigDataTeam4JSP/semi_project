@@ -93,8 +93,8 @@ public class FrontController extends HttpServlet {
 				if(loginID.equals("admin")) {
 					viewPage = "aProductList.do";
 				}else {
-					//viewPage = "productList.do";
-					viewPage = "userInfo.do";
+					viewPage = "productList.do";
+					//viewPage = "userInfo.do";
 				}
 			}else {
 				viewPage = "login_view.jsp";

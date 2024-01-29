@@ -97,7 +97,7 @@ public class Signup_Dao {
 			conn = dataSource.getConnection();	// DB연결. 
 			
 			String query = "UPDATE member SET pw = ?, tel = ?, name = ? ";
-			String where = " WHERE bid = ? ";
+			String where = " WHERE id = ? ";
 			
 			ps = conn.prepareStatement(query+where);
 			
