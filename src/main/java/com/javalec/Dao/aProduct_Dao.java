@@ -106,7 +106,7 @@ public class aProduct_Dao {
 				// data 베이스 연결
 				connection = dataSource.getConnection();
 				// 쿼리 작성
-				String query1 = "select p.pname, p.pcolor, p.pprice, s.psize, s.pqty ";
+				String query1 = "select p.pname, p.pcolor, p.pprice, p.pcontent, s.psize, s.pqty ";
 				String query2 = "from product as p, spec as s ";
 				String query3 = "where p.pid = s.pid and p.pid =" + pid;
 
@@ -121,11 +121,12 @@ public class aProduct_Dao {
 					String pname = resultset.getString("pname"); 
 					String pcolor = resultset.getString("pcolor"); 
 					String pprice = resultset.getString("pprice"); 
+					String pcontent = resultset.getString("pcontent"); 
 					int psize = resultset.getInt("psize");
 					int pqty = resultset.getInt("pqty");
 					
 					// 불러온 데이터들을 dto 객체에 추가
-					aProduct_Dto dto = new aProduct_Dto(pid,pname,pcolor,pprice,psize,pqty);
+					aProduct_Dto dto = new aProduct_Dto(pid,pname,pcolor,pprice,pcontent,psize,pqty);
 					
 					dtos.add(dto);
 				}
@@ -162,7 +163,7 @@ public class aProduct_Dao {
 				// data 베이스 연결
 				connection = dataSource.getConnection();
 				// 쿼리 작성
-				String query = "insert into product(pname, pcolor, pprice,pcontent) values(?,?,?,?)";
+				String query = "insert into product(pname, pcolor, pprice , pcontent) values(?,?,?,?)";
 
 				// 작성한 쿼리를 데이터 connection을 사용하여 실행
 				preparedStatement = connection.prepareStatement(query);
@@ -266,6 +267,47 @@ public class aProduct_Dao {
 				preparedStatement.setInt(1, pqty);
 				preparedStatement.setInt(2, pid);
 				preparedStatement.setInt(3, psize);
+
+				// 실행
+				preparedStatement.executeUpdate();
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally { // 데이터 정리하는 용도로 쓰임 (만든 순서 거꾸로 정리해야함)
+				try {
+
+					if (preparedStatement != null) {
+						preparedStatement.close();
+					}
+					if (connection != null) {
+						connection.close();
+					}
+				} catch (Exception e) {
+
+				}
+			}
+		}
+		
+		public void updateImg(int pid, String filepath) {
+
+			// connection, preparedstatement, resultset 에 값을 미리 넣어두면 해킹당할 위험이 높음
+			// Connection 인터페이스는 데이터베이스와의 연결
+			// PreparedStatement 인터페이스는 SQL 쿼리를 실행하기 위한 객체
+			Connection connection = null;
+			PreparedStatement preparedStatement = null;
+
+			try {
+				// data 베이스 연결
+				connection = dataSource.getConnection();
+				// 쿼리 작성
+				String query = "update product set pimgpath = ? where pid = ?;";
+
+				// 작성한 쿼리를 데이터 connection을 사용하여 실행
+				preparedStatement = connection.prepareStatement(query);
+
+				// ?에 값 넣어주기
+				preparedStatement.setString(1, filepath);
+				preparedStatement.setInt(2, pid);
 
 				// 실행
 				preparedStatement.executeUpdate();
