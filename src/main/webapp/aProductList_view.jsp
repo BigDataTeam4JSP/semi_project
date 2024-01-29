@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Admin Product List Page</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -13,6 +13,8 @@
 	crossorigin="anonymous">
 </head>
 <body>
+<c:import url="head.jsp" />
+<br>
 	<div class="container text-center">
 		<!-- Added text-center class for centering -->
 		<p class="display-1">상품 목록</p>
