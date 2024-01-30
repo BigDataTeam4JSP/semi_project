@@ -28,8 +28,11 @@ public class purchaseinsert implements Command {
 		purchaseinsert_Dao dao = new purchaseinsert_Dao();
 		dao.purchaseInsert(mid, pid, qty, size);
 		
+		int pqty = Integer.parseInt(dto.getPqty());
+		int cqty = Integer.parseInt(qty);
+		int uqty = pqty - cqty;
 		
-		
+		dao.specQtyUpdate(uqty, pid);
 		
 		
 
