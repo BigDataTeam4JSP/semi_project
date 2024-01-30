@@ -40,7 +40,7 @@ public class productList_Dao {
 		try {
 			
 			connection = dataSource.getConnection();	
-			String query ="SELECT pid, pname FROM product";			
+			String query ="SELECT pid, pname, pimgpath FROM product";			
 			preparedStatement = connection.prepareStatement(query);
 			resultset = preparedStatement.executeQuery();
 
@@ -48,9 +48,9 @@ public class productList_Dao {
 				
 				int pid = resultset.getInt("pid"); 
 				String pname = resultset.getString("pname"); 
+				String pimgpath = resultset.getString("pimgpath");
 				
-				
-				productList_Dto dto = new productList_Dto (pid,pname);
+				productList_Dto dto = new productList_Dto(pid, pname, pimgpath);
 
 				dtos.add(dto);
 			}	

@@ -1,4 +1,4 @@
-package com.javalec.Dao;
+									package com.javalec.Dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -46,7 +46,7 @@ public class purchaseList_Dao {
 			// data 베이스 연결
 			connection = dataSource.getConnection();
 			// 쿼리 작성
-			String query1 = " SELECT d.pname, c.mid, c.pid, c.qty, c.date";
+			String query1 = " SELECT d.pname, d.pcolor, c.mid, c.size, c.qty, c.date";
 			String query2 = " From purchase as c, product as d";					
 			String query3 = " where c.mid = ? and c.pid = d.pid";
 			
@@ -60,13 +60,14 @@ public class purchaseList_Dao {
 			while (resultset.next()) {
 				// 데이터 불러오기
 				String pname = resultset.getString("d.pname"); 
+				String pcolor = resultset.getString("d.pcolor"); 
 				String cmid = resultset.getString("c.mid"); 
-				int cpid = resultset.getInt("c.pid"); 
+				int cpid = resultset.getInt("c.size"); 
 				int qty = resultset.getInt("c.qty");
 				String date = resultset.getString("c.date");
 				
 				// 불러온 데이터들을 dto 객체에 추가
-				purchaseList_Dto dto = new purchaseList_Dto(pname, cmid, cpid, qty, date);
+				purchaseList_Dto dto = new purchaseList_Dto(pname, pcolor, cmid, cpid, qty, date);
 				
 				dtos.add(dto);
 			}
