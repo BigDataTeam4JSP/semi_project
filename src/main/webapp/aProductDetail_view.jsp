@@ -14,13 +14,12 @@
     <div class="container">
         <p class="display-1">상품 디테일</p>
         
-        <img src="img/<%=request.getAttribute("FILEPATH") %>" alt="제품 이미지" width="300px" height="300px"><br><br>
+        <img src="img/<%=request.getAttribute("FILEPATH") %>" alt="제품 이미지" width="600px" height="600px"><br><br>
         
         <p>상품명 : <%=request.getAttribute("NAME") %></p><br>
         <p>색상 : <%=request.getAttribute("COLOR") %></p><br>
         <p>가격 : <%=request.getAttribute("PRICE") %></p><br>
         <p>정보 : <%=request.getAttribute("CONTENT") %></p><br><br>
-        
         <table class="table table-striped table-s">
             <tr>
                 <th>사이즈</th>
