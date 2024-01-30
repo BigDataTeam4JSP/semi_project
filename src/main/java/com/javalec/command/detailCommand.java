@@ -11,27 +11,36 @@ public class detailCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		/*
+		 * ----------------------------------------
+		 *  Description : productList_view에서 물건을 클릭했을 때 상세보기 페이지를 띄워줌
+		 *  Date        : 2024.01.30
+		 *  Author      : 원도현
+		 * ----------------------------------------
+		 */
 		
 		HttpSession session = request.getSession();
 		
-//		System.out.println(request.getParameter("pId"));
 		
+		// pid 값을 가져와서 int값으로 변환
 		int pid = Integer.parseInt(request.getParameter("pId"));
+		// dao와 dto 준비
 		detail_Dao dao = new detail_Dao();
 		detail_Dto dto = dao.detail(pid);
 		request.setAttribute("detail", dto);
 		
+		// session에 dto값을 저장
 		session.setAttribute("detailSession", dto);
 		
 		
 //		response.setContentType("image/jpeg");
 //		try {
 //			ServletOutputStream out=response.getOutputStream();
-			String filePath=request.getServletContext().getRealPath("/img/won.png");
+//			String filePath=request.getServletContext().getRealPath("/img/won.png");
 //			FileInputStream fin = new FileInputStream(filePath);
-			request.setAttribute("filePath", filePath);
+//			request.setAttribute("filePath", filePath);
 			
-			System.out.println("filePath = "+filePath);
+//			System.out.println("filePath = "+filePath);
 			
 //		    BufferedInputStream bin = new BufferedInputStream(fin);  
 //		    BufferedOutputStream bout = new BufferedOutputStream(out);  

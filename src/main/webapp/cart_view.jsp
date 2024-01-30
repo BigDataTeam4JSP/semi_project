@@ -3,6 +3,15 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
+<%-- 
+	 ----------------------------------------
+	 Description :  구매확인 페이지의 Form
+	 				detail_Dao.java에서 session값에 저장한 dto 값들을 불러와 페이지에 불러옴
+	 				구매확정을 누르면 purchaseinsert.do로 forward
+	 Date        : 2024.01.30
+	 Author      : 원도현
+	 ----------------------------------------
+ --%>
 <c:set var="dto" value="${detailSession }" />
 <html lang="en">
 <head>

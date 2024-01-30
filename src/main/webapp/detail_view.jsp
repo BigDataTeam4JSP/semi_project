@@ -3,6 +3,15 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
+<%-- 
+	 ----------------------------------------
+	 Description :  상세보기 페이지의 Form
+	 				상품 이미지와 상품이름 , 상품 가격, 상품상세정보를 session에 저장된 dto에서 가져 온 뒤 페이지에 불러옴
+	 				사이즈와 수량을 선택 후 구매하기를 누르면 cart.do로 forward
+	 Date        : 2024.01.30
+	 Author      : 원도현
+	 ----------------------------------------
+ --%>
 <c:set var="dto" value="${detailSession }" />
 <html lang="en">
 <head>

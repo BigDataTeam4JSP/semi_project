@@ -11,7 +11,14 @@ import javax.sql.DataSource;
 import com.javalec.Dto.detail_Dto;
 
 public class detail_Dao {
-	
+	/*
+	 * ----------------------------------------
+	 *  Description : 상세보기 페이지에 띄울 정보를 가져오는 Dao
+	 *  Date        : 2024.01.30
+	 *  Author      : 원도현
+	 * ----------------------------------------
+	 */
+
 	// Field
 	DataSource dataSource;
 
@@ -37,6 +44,7 @@ public class detail_Dao {
 			// data 베이스 연결
 			connection = dataSource.getConnection();
 			// 쿼리 작성
+			// 상품코드, 상품이름, 상품가격, 상품색깔, 상품설명, 상품이미지경로, 상품사이즈, 상품수량을 select
 			String select = "SELECT p.pid ,p.pname ,p.pprice ,p.pcolor ,p.pcontent ,p.pimgpath ,s.seq ,s.psize ,s.pqty";
 			String from = " FROM product as p, spec as s";
 			String where = " WHERE p.pid = ? AND p.pid = s.pid ";
@@ -85,27 +93,5 @@ public class detail_Dao {
 		return dto;
 		
 	} //detail()
-	
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }// End

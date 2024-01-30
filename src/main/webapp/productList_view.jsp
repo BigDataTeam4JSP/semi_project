@@ -22,7 +22,6 @@
           </a>
           <div class="card-body">          
             <h5 class="card-title">${product.pName}</h5>                 
-            <p class="card-text">${product.pId}</p>           
           </div>
         </div>
       </div>
