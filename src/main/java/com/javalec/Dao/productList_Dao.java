@@ -10,18 +10,15 @@ import javax.sql.DataSource;
 
 import com.javalec.Dto.productList_Dto;
 
-
 /*
-  ----------------------------------------
- *  Description : 상품 목록 productList_view.jsp
- *  Date        : 2023.11.30
+ * ----------------------------------------
+ *  Description : 상품 목록조회 
+ *  Date        : 2024.1.30
  *  Author      : TaewooKi
  * ----------------------------------------
  */
 
-
 public class productList_Dao {
-	
  	
 	//Field
 	DataSource dataSource;
