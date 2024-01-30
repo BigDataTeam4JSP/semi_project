@@ -11,8 +11,18 @@ import javax.sql.DataSource;
 import com.javalec.Dto.productList_Dto;
 
 
+/*
+  ----------------------------------------
+ *  Description : 상품 목록 productList_view.jsp
+ *  Date        : 2023.11.30
+ *  Author      : TaewooKi
+ * ----------------------------------------
+ */
+
+
 public class productList_Dao {
 	
+ 	
 	//Field
 	DataSource dataSource;
 	
@@ -57,7 +67,7 @@ public class productList_Dao {
                       
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally { // 데이터 정리하는 용도로 쓰임 (만든 순서 거꾸로 정리해야함)
+		} finally { 
 			try {
 				if (resultset != null) {
 					resultset.close();
