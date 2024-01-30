@@ -1,7 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%
+/*
+* ---------------------------------------
+*  Description : 상품 목록조회 
+*  Date        : 2024.1.30
+*  Author      : TaewooKi
+* ----------------------------------------
+*/
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -22,7 +30,6 @@
           </a>
           <div class="card-body">          
             <h5 class="card-title">${product.pName}</h5>                 
-            <p class="card-text">${product.pId}</p>           
           </div>
         </div>
       </div>

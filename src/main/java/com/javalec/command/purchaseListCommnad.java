@@ -9,6 +9,13 @@ import javax.servlet.http.HttpSession;
 import com.javalec.Dao.purchaseList_Dao;
 import com.javalec.Dto.purchaseList_Dto;
 
+/*
+*----------------------------------------
+*  Description : 내구매내역조회
+*  Date        : 2024.1.30
+*  Author      : TaewooKi
+* ----------------------------------------
+*/
 public class purchaseListCommnad implements Command {
 
 	@Override
