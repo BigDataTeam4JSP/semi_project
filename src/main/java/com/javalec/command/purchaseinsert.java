@@ -10,7 +10,8 @@ import com.javalec.Dto.detail_Dto;
 public class purchaseinsert implements Command {
 	/*
 	 * ----------------------------------------
-	 *  Description : 내구매내역페이지로 넘어가기 전
+	 *  Description : 내구매내역페이지로 넘어가기 전 DB의 purchase Table에 insert
+	 *  			  spec Table에 qty update
 	 *  Date        : 2024.01.30
 	 *  Author      : 원도현
 	 * ----------------------------------------
