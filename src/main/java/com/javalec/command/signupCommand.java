@@ -4,7 +4,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.javalec.Dao.Signup_Dao;
-
+/* ----------------------------------------
+ *  Description : 회원가입 정보 업데이트.
+ *  Date        : 2024.01.27- 2024.01.30
+ *  Author      : 김수진
+ * ----------------------------------------
+ */
 public class signupCommand implements Command {
 
 	@Override

@@ -8,7 +8,12 @@ import java.util.ArrayList;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
-
+/* ----------------------------------------
+ *  Title		: 회원가입 DAO
+ *  Date        : 2024.01.27- 2024.01.30
+ *  Author      : 김수진
+ * ----------------------------------------
+ */
 public class Signup_Dao {
 	// Field
 	DataSource dataSource;

@@ -5,7 +5,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.javalec.Dao.Login_Dao;
-
+/* ----------------------------------------
+ *  Description : 로그인 성공하면 세션에 로그인ID정보 입력.
+ *  Date        : 2024.01.27- 2024.01.30
+ *  Author      : 김수진
+ * ----------------------------------------
+ */
 public class loginCommand implements Command {
 
 	@Override

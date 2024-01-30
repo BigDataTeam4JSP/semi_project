@@ -25,7 +25,12 @@ import com.javalec.command.purchaseListCommnad;
 import com.javalec.command.purchaseinsert;
 import com.javalec.command.signupCommand;
 import com.javalec.command.userInfoCommand;
-
+/* ----------------------------------------
+ *  Description : 화면과 기능 분리해주는 컨트롤러
+ *  Date        : 2024.01.27- 2024.01.30
+ *  Author      : 김수진
+ * ----------------------------------------
+ */
 /**
  * Servlet implementation class FrontController
  */
@@ -92,22 +97,22 @@ public class FrontController extends HttpServlet {
 			System.out.println("loginID : " + loginID);
 
 			if (loginID != null) {
-				if (loginID.equals("admin")) {
+				if (loginID.equals("admin")) {	// admin으로 로그인 시 관리자 상품리스트로 이동. by 수진
 					viewPage = "aProductList.do";
-				} else {
+				} else {						// 사용자로 로그인 시 사용자 상품리스트로 이동. by 수진
 					viewPage = "productList.do";
 					// viewPage = "userInfo.do";
 				}
-			} else {
+			} else {							// 로그인 실패시 로그인 페이지로 이동.
 				viewPage = "login_view.jsp";
 			}
 			break;
-		case ("/userInfo.do"):
+		case ("/userInfo.do"):					// 사용자 정보 보기.
 			command = new userInfoCommand();
 			command.execute(request, response);
 			viewPage = "userInfo.jsp";
 			break;
-		case ("/logout.do"):
+		case ("/logout.do"):					// 로그아웃.
 			session.invalidate();
 			viewPage = "login_view.jsp";
 			break;
@@ -136,15 +141,15 @@ public class FrontController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "purchaseList_view.jsp";
 			break;
-		case ("/signupStart.do"):
+		case ("/signupStart.do"):		// 회원가입 페이지로 이동.
 			viewPage = "sign_view.jsp";
 			break;
-		case ("/signup.do"):
+		case ("/signup.do"):			// 회원가입 수행.
 			command = new signupCommand();
 			command.execute(request, response);
 			response.sendRedirect("loginStart.do");
 			break;
-		case ("/checkid.do"):
+		case ("/checkid.do"):			// 회원가입시 아이디 중복체크
 			command = new idCheckCommand();
 			command.execute(request, response);
 			viewPage = "sign_view.jsp";
