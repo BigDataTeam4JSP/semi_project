@@ -31,7 +31,7 @@ public class aProduct_Dao {
 
 		// Method
 
-		// 전체 검색
+		// (Read)상품 리스트 불러오는 메소드
 		public ArrayList<aProduct_Dto> list() {
 
 			ArrayList<aProduct_Dto> dtos = new ArrayList<aProduct_Dto>();// arraylist 생성
@@ -90,6 +90,7 @@ public class aProduct_Dao {
 			return dtos;
 		}
 		
+		// (Read)상품 스펙 불러오는 메소드
 		public ArrayList<aProduct_Dto> spec(int pid) { // aProductDetail에 쓰일 데이터 read하기
 
 			ArrayList<aProduct_Dto> dtos = new ArrayList<aProduct_Dto>();
@@ -151,6 +152,8 @@ public class aProduct_Dao {
 			return dtos;
 		}
 		
+		// (Create)상품 등록하는 메소드
+		// aProductInsert_view에서 상품명,상품색상,상품가격,상품정보를 입력받아옴
 		public void insertProduct(String pName, String pColor, String pPrice,String pContent) {
 
 			// connection, preparedstatement, resultset 에 값을 미리 넣어두면 해킹당할 위험이 높음
@@ -194,6 +197,9 @@ public class aProduct_Dao {
 			}
 		}
 		
+		// (Create)새 상품 등록 시 등록한 상품의 재고를 0개로 초기화시켜주는 메소드
+		// 상품 등록과 동시에 실행될 메소드라 상품의 아이디를 불러오기 어려움
+		// 때문에 등록한 상품의 이름, 색상, 가격의 정보를 사용하여 상품의 아이디를 찾음
 		public void insertSpec(String pName, String pColor, String pPrice) {
 
 			// connection, preparedstatement, resultset 에 값을 미리 넣어두면 해킹당할 위험이 높음
@@ -246,6 +252,7 @@ public class aProduct_Dao {
 			}
 		}
 		
+		// (Update)재고 수정하는 메소드
 		public void update(int pid, int psize, int pqty) {
 
 			// connection, preparedstatement, resultset 에 값을 미리 넣어두면 해킹당할 위험이 높음
@@ -288,6 +295,7 @@ public class aProduct_Dao {
 			}
 		}
 		
+		// (Update) 추가한 이미지 파일의 경로를 추가하는 메소드
 		public void updateImg(int pid, String filepath) {
 
 			// connection, preparedstatement, resultset 에 값을 미리 넣어두면 해킹당할 위험이 높음
@@ -329,6 +337,7 @@ public class aProduct_Dao {
 			}
 		}
 		
+		// (Read) 저장된 이미지 파일 경로 불러오는 메소드
 		public aProduct_Dto imgpath(int pid) { // aProductDetail에 쓰일 데이터 read하기
 
 			aProduct_Dto dto = new aProduct_Dto();
