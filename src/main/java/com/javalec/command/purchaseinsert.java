@@ -10,7 +10,7 @@ import com.javalec.Dto.detail_Dto;
 public class purchaseinsert implements Command {
 	/*
 	 * ----------------------------------------
-	 *  Description : 상세페이지에서 가져온 size와 qty값을 session에 저장
+	 *  Description : 내구매내역페이지로 넘어가기 전
 	 *  Date        : 2024.01.30
 	 *  Author      : 원도현
 	 * ----------------------------------------
