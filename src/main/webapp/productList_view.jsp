@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -12,31 +11,23 @@
 </head>
 <body>
 <c:import url="head.jsp" />
-
 <div class="container"> 
   <h1 class="mt-2">상품목록</h1>
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th class="text-center">상품코드</th>
-        <th>상품명</th>
-        <th class="text-center">사진</th>
-      </tr>
-    </thead>
-    <tbody>
-      <c:forEach items="${list}" var="product">
-        <tr>
-          <td class="text-center">${product.pId}</td>
-          <td><a href="detail.do?pId=${product.pId}">${product.pName}</a></td>
-          <td class="text-center">
-            <img src="img/${product.pImgPath }" width="100" height="100">
-          </td>
-        </tr>
-      </c:forEach>
-    </tbody>
-  </table>
-
+  <div class="row">
+    <c:forEach items="${list}" var="product">
+      <div class="col-md-4">
+        <div class="card">
+       	 <a href="detail.do?pId=${product.pId}">
+          <img src="img/${product.pImgPath }" class="card-img-top" alt="상품 이미지">
+          </a>
+          <div class="card-body">          
+            <h5 class="card-title">${product.pName}</h5>                 
+            <p class="card-text">${product.pId}</p>           
+          </div>
+        </div>
+      </div>
+    </c:forEach>
+  </div>
 </div>
-
 </body>
 </html>
