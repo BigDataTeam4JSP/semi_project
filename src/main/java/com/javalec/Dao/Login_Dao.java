@@ -7,7 +7,12 @@ import java.sql.ResultSet;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
-
+/* ----------------------------------------
+ *  Description : 로그인 DAO
+ *  Date        : 2024.01.27- 2024.01.30
+ *  Author      : 김수진
+ * ----------------------------------------
+ */
 public class Login_Dao {
 	// field
 	DataSource dataSource;
