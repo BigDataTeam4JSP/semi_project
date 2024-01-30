@@ -10,7 +10,7 @@ public class cartCommand implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-		
+
 		session.setAttribute("size", request.getParameter("size"));
 		session.setAttribute("qty", request.getParameter("qty"));
 
