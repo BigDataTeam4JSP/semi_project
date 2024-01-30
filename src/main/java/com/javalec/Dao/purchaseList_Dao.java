@@ -12,6 +12,13 @@ import javax.sql.DataSource;
 import com.javalec.Dto.aProduct_Dto;
 import com.javalec.Dto.purchaseList_Dto;
 
+/*
+*----------------------------------------
+*  Description : 내구매내역조회
+*  Date        : 2024.1.30
+*  Author      : TaewooKi
+* ----------------------------------------
+*/
 public class purchaseList_Dao {
 	
 	//Field
@@ -34,23 +41,20 @@ public class purchaseList_Dao {
 	public ArrayList<purchaseList_Dto> spec(String mid) { //데이터 일기
 
 		ArrayList<purchaseList_Dto> dtos = new ArrayList<purchaseList_Dto>();
-		
-		// Connection 인터페이스는 데이터베이스와의 연결
-		// PreparedStatement 인터페이스는 SQL 쿼리를 실행하기 위한 객체
-		// ResultSet 인터페이스는 데이터베이스에서 가져온 쿼리 결과
-		Connection connection = null;
-		PreparedStatement preparedStatement = null;
-		ResultSet resultset = null;
+	
+		Connection connection = null; // 인터페이스는 데이터베이스와의 연결
+		PreparedStatement preparedStatement = null; //  인터페이스는 SQL 쿼리를 실행하기 위한 객체
+		ResultSet resultset = null; // 데이터베이스에서 가져온 쿼리 결과
 
 		try {
-			// data 베이스 연결
-			connection = dataSource.getConnection();
-			// 쿼리 작성
+			
+			connection = dataSource.getConnection(); // data 베이스 연결
+			
 			String query1 = " SELECT d.pname, d.pcolor, c.mid, c.size, c.qty, c.date";
 			String query2 = " From purchase as c, product as d";					
 			String query3 = " where c.mid = ? and c.pid = d.pid";
 			
-						// 작성한 쿼리를 데이터 connection을 사용하여 실행
+			// 작성한 쿼리를 데이터 connection을 사용하여 실행
 			preparedStatement = connection.prepareStatement(query1+query2+query3);
 			preparedStatement.setString(1, mid);
 
@@ -66,7 +70,7 @@ public class purchaseList_Dao {
 				int qty = resultset.getInt("c.qty");
 				String date = resultset.getString("c.date");
 				
-				// 불러온 데이터들을 dto 객체에 추가
+				// 불러온 데이터들을 dto에 추가
 				purchaseList_Dto dto = new purchaseList_Dto(pname, pcolor, cmid, cpid, qty, date);
 				
 				dtos.add(dto);
@@ -74,7 +78,7 @@ public class purchaseList_Dao {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally { // 데이터 정리하는 용도로 쓰임 (만든 순서 거꾸로 정리해야함)
+		} finally { // 데이터 정리
 			try {
 				if (resultset != null) {
 					resultset.close();
