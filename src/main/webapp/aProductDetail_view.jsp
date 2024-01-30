@@ -14,16 +14,13 @@
     <div class="container">
         <p class="display-1">상품 디테일</p>
         
-        <img src="img/${sessionScope.FILEPATH}" alt="제품 이미지" width="300px" height="300px"><br><br>
+        <img src="img/<%=request.getAttribute("FILEPATH") %>" alt="제품 이미지" width="300px" height="300px"><br><br>
         
-        <p>상품명 : ${sessionScope.NAME}</p><br>
-        <p>색상 : ${sessionScope.COLOR}</p><br>
-        <p>가격 : ${sessionScope.PRICE}</p><br>
-        <p>정보 : ${sessionScope.CONTENT}</p><br><br>
-
-        <%session.invalidate(); %>
+        <p>상품명 : <%=request.getAttribute("NAME") %></p><br>
+        <p>색상 : <%=request.getAttribute("COLOR") %></p><br>
+        <p>가격 : <%=request.getAttribute("PRICE") %></p><br>
+        <p>정보 : <%=request.getAttribute("CONTENT") %></p><br><br>
         
-        <form action ="aProcuctUpdate.do" method="post">
         <table class="table table-striped table-s">
             <tr>
                 <th>사이즈</th>
@@ -32,13 +29,14 @@
             </tr>
             <c:forEach items="${spec}" var="spec">
                 <tr>
-                    <td><input type="hidden" name="psize" value="${spec.pSize}">${spec.pSize}</td>
-                    <td><input type="hidden" name="pid" value="${spec.pId}"><input type="text" name="pqty" value="${spec.pQty}"></td>
-                    <td><input type="submit" value="수정하기"></td>
+       				 <form action ="aProcuctUpdate.do" method="post">
+	                    <td><input type="hidden" name="psize" value="${spec.pSize}">${spec.pSize}</td>
+	                    <td><input type="hidden" name="pid" value="${spec.pId}"><input type="text" name="pqty" value="${spec.pQty}"></td>
+	                    <td><input type="submit" value="수정하기"></td>
+       				 </form>
                 </tr>
             </c:forEach>
         </table>
-        </form>
     </div>
 </body>
 </html>

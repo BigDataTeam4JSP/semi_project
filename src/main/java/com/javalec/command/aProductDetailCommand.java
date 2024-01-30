@@ -26,12 +26,11 @@ public class aProductDetailCommand implements Command {
 		
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("ID",pid);
-		session.setAttribute("NAME",dtos.get(0).getpName());
-		session.setAttribute("COLOR",dtos.get(0).getpColor());
-		session.setAttribute("PRICE",dtos.get(0).getpPrice());
-		session.setAttribute("CONTENT",dtos.get(0).getpContent());
-		session.setAttribute("FILEPATH",dto.getPfilepath());
+		request.setAttribute("NAME", dtos.get(0).getpName());
+		request.setAttribute("COLOR", dtos.get(0).getpColor ());
+		request.setAttribute("PRICE", dtos.get(0).getpPrice());
+		request.setAttribute("CONTENT", dtos.get(0).getpContent());		
+		request.setAttribute("FILEPATH", dto.getPfilepath());
 		
 		System.out.println(session.getAttribute("FILEPATH"));
 		
