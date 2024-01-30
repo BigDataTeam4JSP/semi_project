@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
@@ -8,6 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Insert Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script type="text/javascript">
+        function validateForm() {
+            var productName = document.getElementById("productName").value;
+            var productColor = document.getElementById("productColor").value;
+            var productPrice = document.getElementById("productPrice").value;
+
+            // 상품명 유효성 검사
+            if (productName.length > 40 || !/^[a-zA-Z0-9가-힣]+$/.test(productName)) {
+                alert("상품명은 40자 이하의 한글, 영어, 숫자만 입력 가능합니다.");
+                return false;
+            }
+
+            // 색상 유효성 검사
+            if (!/^[a-zA-Z]+$/.test(productColor)) {
+                alert("색상은 영어로만 입력 가능합니다.");
+                return false;
+            }
+
+            // 가격 유효성 검사
+            if (!/^[0-9]+$/.test(productPrice)) {
+                alert("가격은 숫자로만 입력 가능합니다.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </head>
 <body class="text-center">
 
@@ -17,7 +43,7 @@
     <br>
 
     <div class="container">
-        <form action="aProductInsert.do" method="post" class="needs-validation">
+        <form action="aProductInsert.do" method="post" class="needs-validation" onsubmit="return validateForm();">
             <div class="mb-3">
                 <label for="productName" class="form-label visually-hidden">상품명</label>
                 <input type="text" class="form-control" id="productName" name="name" placeholder="상품명" required>
