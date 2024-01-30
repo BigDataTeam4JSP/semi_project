@@ -10,15 +10,15 @@ public class aProductInsertCommand implements Command {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 
-		String pname, pcolor, pprice, pcontent;
-
-		pname = request.getParameter("name");
-		pcolor = request.getParameter("color");
-		pprice = request.getParameter("price");
-		pcontent = request.getParameter("content");
+		// insert 화면에서 입력받은 정보들을 request.getParameter로 불러옴
+		String pname = request.getParameter("name");
+		String pcolor = request.getParameter("color");
+		String pprice = request.getParameter("price");
+		String pcontent = request.getParameter("content");
 		
 		aProduct_Dao dao = new aProduct_Dao();
 		
+		// 데이터 추가하는 메소드들을 출력하여 입력 받은 값들을 넣어주기
 		dao.insertProduct(pname, pcolor, pprice, pcontent);
 		dao.insertSpec(pname, pcolor, pprice);
 	}
