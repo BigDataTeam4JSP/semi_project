@@ -15,9 +15,9 @@ public class aProductListCommand implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		aProduct_Dao dao = new aProduct_Dao();
-		ArrayList<aProduct_Dto> dtos = dao.list();
+		ArrayList<aProduct_Dto> dtos = dao.list(); // dto형식의 arraylist에 dao.list에서 불러온 데이터를 추가
 		
-		request.setAttribute("list", dtos);
+		request.setAttribute("list", dtos); // 데이터가 담긴 dtos를 request하여 view화면으로 보냄
 	}
 
 	@Override
