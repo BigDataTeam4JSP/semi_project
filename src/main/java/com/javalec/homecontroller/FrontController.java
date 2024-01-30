@@ -22,6 +22,7 @@ import com.javalec.command.idCheckCommand;
 import com.javalec.command.loginCommand;
 import com.javalec.command.productListCommand;
 import com.javalec.command.purchaseListCommnad;
+import com.javalec.command.purchaseinsert;
 import com.javalec.command.signupCommand;
 import com.javalec.command.userInfoCommand;
 
@@ -124,6 +125,11 @@ public class FrontController extends HttpServlet {
 			command = new cartCommand();
 			command.execute(request, response);
 			viewPage = "cart_view.jsp";
+			break;
+		case ("/purchaseinsert.do"):
+			command = new purchaseinsert();
+			command.execute(request, response);
+			viewPage = "purchaseList.do";
 			break;
 		case ("/purchaseList.do"):
 			command = new purchaseListCommnad();

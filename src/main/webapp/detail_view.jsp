@@ -13,12 +13,13 @@
 </head>
 <body>
 <c:import url="head.jsp" />
+<br>
 	<form action="cart.do" method="post">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
 					<div class="product-image">
-						<img src="${dto.pimgpath }" alt="제품 이미지" width="100%" height="100%">
+						<img src="img/${dto.pimgpath }" alt="제품 이미지" width="100%" height="100%">
 					</div>
 				</div>
 				<div class="col-md-6">

@@ -29,7 +29,7 @@
           <td class="text-center">${product.pId}</td>
           <td><a href="detail.do?pId=${product.pId}">${product.pName}</a></td>
           <td class="text-center">
-            <img src="image" width="100" height="100">
+            <img src="img/${product.pImgPath }" width="100" height="100">
           </td>
         </tr>
       </c:forEach>

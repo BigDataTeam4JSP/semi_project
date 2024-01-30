@@ -13,10 +13,11 @@
 </head>
 <body>
 <c:import url="head.jsp" />
+<br>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				<img src="${dto.pimgpath }" class="img-fluid" alt="이미지">
+				<img src="img/${dto.pimgpath }" class="img-fluid" alt="이미지">
 			</div>
 			<div class="col-md-6">
 				<h3>${dto.pname }</h3>
@@ -35,7 +36,7 @@
 		</div>
 		<div class="row">
 			<div class="col-12 mt-2">
-				<a href="purchaseList.do" class="btn btn-primary float-right">구매확정</a>
+				<a href="purchaseinsert.do" class="btn btn-primary float-right">구매확정</a>
 			</div>
 		</div>
 	</div>
